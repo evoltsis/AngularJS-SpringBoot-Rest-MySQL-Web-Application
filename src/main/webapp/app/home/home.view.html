@@ -1,0 +1,52 @@
+<body ng-controller="HomeController" >
+
+	<div class="panel panel-default">
+		<div class="panel-heading" > {{username}}'s To Do List 
+		<button style="margin-left: 80%"type="button" class="btn btn-default" ng-click="logOut()">Log Out</button></div>
+		<div class="panel-body">
+		
+			<div class="table-responsive col-md-6" style="width:100%;padding-top: 25px;">
+				<table class="table table-striped">
+					<tr>
+						<th>Title</th>
+						<th>Text</th>					
+						<th></th>
+					</tr>
+					<tr ng-repeat="note in toDoList">
+						<td>{{note.title}}</td>
+						<td>{{note.text}}</td>													
+						<td>
+							<button type="button" class="btn btn-default"
+								ng-click="updateNoteInit(note)">
+								<span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
+							</button>
+							<button type="button" class="btn btn-default"
+								ng-click="deleteNote(note)">
+								<span class="glyphicon glyphicon-remove-circle"
+									aria-hidden="true"></span>
+							</button>
+						</td>
+					</tr>
+				</table>
+			</div>		
+			<form class="col-md-4" ng-submit="saveNote()">
+				<div class="form-group">
+					<label for="noteTilte">Note Title</label> <input type="text"
+						ng-model="note.title" class="form-control" id="noteTilte"
+						placeholder="Note Title">
+				</div>
+				<div class="form-group">
+					<label for="noteText">Note Text</label> <input type="text"
+						ng-model="note.text" class="form-control"
+						id="noteText" placeholder="Note Text">
+				</div>
+
+				<button type="submit" class="btn btn-default">{{buttonText}}</button>
+				
+			</form>
+			
+		</div>
+		
+	</div>
+
+</body>
