@@ -1,6 +1,6 @@
 # To Do List System using AngularJS, Maven, Spring Framework, Spring Boot and MySQL
 
-Application ScreenShots:
+Application Screenshots:
 
 ![](Images/ToDoList.PNG)
 
